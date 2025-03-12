@@ -125,19 +125,21 @@
         const navLinks = document.querySelectorAll('.sidebar nav ul li a');
 
         function updateScrollIndicator() {
-            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
             const scrollPercentage = (window.scrollY / totalHeight) * 100;
             const navHeight = document.querySelector('.sidebar nav').clientHeight;
-            const indicatorTop = (scrollPercentage / 100) * navHeight;
+            const indicatorTop = Math.min((scrollPercentage / 100) * navHeight, navHeight - 8); // Cap at bottom
             scrollIndicator.style.top = `${indicatorTop}px`;
         }
 
         window.addEventListener('scroll', () => {
+            const viewportCenter = window.scrollY + window.innerHeight / 2;
+
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 60 && scrollY < sectionTop + sectionHeight - 60) {
+                const sectionBottom = sectionTop + section.offsetHeight;
+                if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
                     current = section.getAttribute('id');
                 }
             });
