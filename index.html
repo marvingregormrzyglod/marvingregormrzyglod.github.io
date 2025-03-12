@@ -125,11 +125,18 @@
             const scrollTop = window.scrollY;
             const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
 
+            // Parallax Background Scroll
+            const bgHeight = document.body.scrollHeight; // Approximate background height
+            const parallaxSpeed = 0.5; // Slower than foreground
+            const bgOffset = (scrollTop / (documentHeight)) * (bgHeight - window.innerHeight) * parallaxSpeed;
+            document.body.style.backgroundPositionY = `-${bgOffset}px`;
+
+            // Sidebar Highlighting
             let current = '';
             if (scrollTop === 0) {
-                current = 'intro'; // Force "Intro" at top
-            } else if (scrollTop >= documentHeight - 10) { // Slight buffer for bottom
-                current = 'about-me'; // Force "About" at bottom
+                current = 'intro';
+            } else if (scrollTop >= documentHeight - 10) {
+                current = 'about-me';
             } else {
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
