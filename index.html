@@ -71,7 +71,6 @@
                             </a>
                         </div>
                     </div>
-                    <!-- Add more items as needed -->
                 </div>
             </section>
 
@@ -118,47 +117,42 @@
     </div>
 
     <script>
-    // Create scroll indicator element
-    const scrollIndicator = document.createElement('div');
-    scrollIndicator.classList.add('scroll-indicator');
-    document.querySelector('.sidebar nav').appendChild(scrollIndicator);
+        const scrollIndicator = document.createElement('div');
+        scrollIndicator.classList.add('scroll-indicator');
+        document.querySelector('.sidebar nav').appendChild(scrollIndicator);
 
-    // Get sections and nav links
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.sidebar nav ul li a');
+        const sections = document.querySelectorAll('section, header');
+        const navLinks = document.querySelectorAll('.sidebar nav ul li a');
 
-    // Update scroll indicator position
-    function updateScrollIndicator() {
-        const totalHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollPercentage = (window.scrollY / totalHeight) * 100;
-        const navHeight = document.querySelector('.sidebar nav').clientHeight;
-        const indicatorTop = (scrollPercentage / 100) * navHeight;
-        scrollIndicator.style.top = `${indicatorTop}px`;
-    }
+        function updateScrollIndicator() {
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercentage = (window.scrollY / totalHeight) * 100;
+            const navHeight = document.querySelector('.sidebar nav').clientHeight;
+            const indicatorTop = (scrollPercentage / 100) * navHeight;
+            scrollIndicator.style.top = `${indicatorTop}px`;
+        }
 
-    // Update active section and scroll indicator on scroll
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (scrollY >= sectionTop - 60 && scrollY < sectionTop + sectionHeight - 60) {
-                current = section.getAttribute('id');
-            }
-        });
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 60 && scrollY < sectionTop + sectionHeight - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
-                link.classList.add('active');
-            }
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+
+            updateScrollIndicator();
         });
 
         updateScrollIndicator();
-    });
-
-    // Initial update
-    updateScrollIndicator();
-</script>
+    </script>
 </body>
 </html>
