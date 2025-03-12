@@ -26,7 +26,7 @@
         <main class="content">
             <header class="intro" id="intro">
                 <h1>Hi, I'm [Your Name]</h1>
-                <p>I'm a <mark>[your profession]</mark> passionate about creating <mark>[what you do]</mark>. 
+                <p class="initial-cap">I'm a <mark>[your profession]</mark> passionate about creating <mark>[what you do]</mark>. 
                 With [X years] of experience, I specialize in [your skills]. 
                 Check out my <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> or 
                 <a href="https://twitter.com/yourhandle">Twitter</a>. Welcome to my portfolio!</p>
@@ -64,13 +64,14 @@
                     <div class="timeline-item">
                         <h3>Job Title</h3>
                         <p class="subtitle">Company Name | [Start Date] - [End Date]</p>
-                        <p>Description of responsibilities and achievements.</p>
+                        <p class="initial-cap">Description of responsibilities and achievements.</p>
                         <div class="project-image">
                             <a href="https://product-website.com" target="_blank">
                                 <img src="job-project1.jpg" alt="Project from Job">
                             </a>
                         </div>
                     </div>
+                    <!-- Add more items as needed -->
                 </div>
             </section>
 
@@ -80,7 +81,7 @@
                     <div class="timeline-item">
                         <h3>Degree Title</h3>
                         <p class="subtitle">University Name | [Graduation Year]</p>
-                        <p>Relevant coursework or achievements.</p>
+                        <p class="initial-cap">Relevant coursework or achievements.</p>
                     </div>
                 </div>
             </section>
@@ -91,7 +92,7 @@
                     <div class="timeline-item">
                         <h3>Award Name</h3>
                         <p class="subtitle">Issuing Organization | [Year]</p>
-                        <p>Brief description of the award or recognition.</p>
+                        <p class="initial-cap">Brief description of the award or recognition.</p>
                     </div>
                 </div>
             </section>
@@ -102,14 +103,14 @@
                     <div class="timeline-item">
                         <h3>Publication Title</h3>
                         <p class="subtitle">Journal/Publisher | [Publication Date]</p>
-                        <p>Brief description or citation.</p>
+                        <p class="initial-cap">Brief description or citation.</p>
                     </div>
                 </div>
             </section>
 
             <section class="about-me" id="about-me">
                 <h2>A Little More About Me</h2>
-                <p>I love spending my free time [hobby 1], [hobby 2], and exploring [hobby 3]. 
+                <p class="initial-cap">I love spending my free time [hobby 1], [hobby 2], and exploring [hobby 3]. 
                 When I'm not working on [your profession-related activity], you can find me 
                 [fun personal detail].</p>
             </section>
@@ -117,27 +118,25 @@
     </div>
 
     <script>
-    const sections = document.querySelectorAll('section, header');
-    const navLinks = document.querySelectorAll('.sidebar nav ul li a');
+        const sections = document.querySelectorAll('section, header');
+        const navLinks = document.querySelectorAll('.sidebar nav ul li a');
 
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (scrollY >= sectionTop - 60) {
-                current = section.getAttribute('id');
-            }
-        });
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
-                link.classList.add('active');
-            }
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
         });
-    });
-</script>
-    
-    
+    </script>
 </body>
 </html>
