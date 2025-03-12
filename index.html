@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="background-wrapper">
+        <div class="background-image"></div>
+    </div>
     <div class="container">
         <aside class="sidebar">
             <nav>
@@ -119,6 +122,7 @@
     <script>
         const sections = document.querySelectorAll('section, header');
         const navLinks = document.querySelectorAll('.sidebar nav ul li a');
+        const bgImage = document.querySelector('.background-image');
 
         window.addEventListener('scroll', () => {
             const viewportCenter = window.scrollY + window.innerHeight / 2;
@@ -126,10 +130,11 @@
             const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
 
             // Parallax Background Scroll
-            const bgHeight = document.body.scrollHeight; // Approximate background height
-            const parallaxSpeed = 0.5; // Slower than foreground
-            const bgOffset = (scrollTop / (documentHeight)) * (bgHeight - window.innerHeight) * parallaxSpeed;
-            document.body.style.backgroundPositionY = `-${bgOffset}px`;
+            const bgHeight = bgImage.offsetHeight; // Actual background image height
+            const scrollRatio = scrollTop / documentHeight; // 0 to 1
+            const bgMaxScroll = bgHeight - window.innerHeight; // Max distance background can move
+            const bgPosition = scrollRatio * bgMaxScroll; // Align bottom with "About"
+            bgImage.style.transform = `translateY(-${bgPosition}px)`;
 
             // Sidebar Highlighting
             let current = '';
