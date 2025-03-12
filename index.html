@@ -12,13 +12,13 @@
         <aside class="sidebar">
             <nav>
                 <ul>
-                    <li><a href="#intro">Intro</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#work-experience">Work</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#awards">Awards</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#about-me">About</a></li>
+                    <li><a href="#intro" class="timeline-dot">Intro</a></li>
+                    <li><a href="#projects" class="timeline-dot">Projects</a></li>
+                    <li><a href="#work-experience" class="timeline-dot">Work</a></li>
+                    <li><a href="#education" class="timeline-dot">Education</a></li>
+                    <li><a href="#awards" class="timeline-dot">Awards</a></li>
+                    <li><a href="#publications" class="timeline-dot">Publications</a></li>
+                    <li><a href="#about-me" class="timeline-dot">About</a></li>
                 </ul>
             </nav>
         </aside>
@@ -60,8 +60,8 @@
 
             <section class="work-experience" id="work-experience">
                 <h2>Work Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
+                <div class="items">
+                    <div class="item">
                         <h3>Job Title</h3>
                         <p class="subtitle">Company Name | [Start Date] - [End Date]</p>
                         <p class="initial-cap">Description of responsibilities and achievements.</p>
@@ -77,8 +77,8 @@
 
             <section class="education" id="education">
                 <h2>Education</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
+                <div class="items">
+                    <div class="item">
                         <h3>Degree Title</h3>
                         <p class="subtitle">University Name | [Graduation Year]</p>
                         <p class="initial-cap">Relevant coursework or achievements.</p>
@@ -88,8 +88,8 @@
 
             <section class="awards" id="awards">
                 <h2>Awards & Recognitions</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
+                <div class="items">
+                    <div class="item">
                         <h3>Award Name</h3>
                         <p class="subtitle">Issuing Organization | [Year]</p>
                         <p class="initial-cap">Brief description of the award or recognition.</p>
@@ -99,8 +99,8 @@
 
             <section class="publications" id="publications">
                 <h2>Publications</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
+                <div class="items">
+                    <div class="item">
                         <h3>Publication Title</h3>
                         <p class="subtitle">Journal/Publisher | [Publication Date]</p>
                         <p class="initial-cap">Brief description or citation.</p>
@@ -125,7 +125,8 @@
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (scrollY >= sectionTop - 60) {
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 60 && scrollY < sectionTop + sectionHeight - 60) {
                     current = section.getAttribute('id');
                 }
             });
