@@ -117,32 +117,28 @@
     </div>
 
     <script>
-        const scrollIndicator = document.createElement('div');
-        scrollIndicator.classList.add('scroll-indicator');
-        document.querySelector('.sidebar nav').appendChild(scrollIndicator);
-
         const sections = document.querySelectorAll('section, header');
         const navLinks = document.querySelectorAll('.sidebar nav ul li a');
 
-        function updateScrollIndicator() {
-            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercentage = (window.scrollY / totalHeight) * 100;
-            const navHeight = document.querySelector('.sidebar nav').clientHeight;
-            const indicatorTop = Math.min((scrollPercentage / 100) * navHeight, navHeight - 8); // Cap at bottom
-            scrollIndicator.style.top = `${indicatorTop}px`;
-        }
-
         window.addEventListener('scroll', () => {
             const viewportCenter = window.scrollY + window.innerHeight / 2;
+            const scrollTop = window.scrollY;
+            const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
 
             let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
-                    current = section.getAttribute('id');
-                }
-            });
+            if (scrollTop === 0) {
+                current = 'intro'; // Force "Intro" at top
+            } else if (scrollTop >= documentHeight - 10) { // Slight buffer for bottom
+                current = 'about-me'; // Force "About" at bottom
+            } else {
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
+                        current = section.getAttribute('id');
+                    }
+                });
+            }
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
@@ -150,11 +146,7 @@
                     link.classList.add('active');
                 }
             });
-
-            updateScrollIndicator();
         });
-
-        updateScrollIndicator();
     </script>
 </body>
 </html>
