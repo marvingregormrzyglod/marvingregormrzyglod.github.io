@@ -3,106 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marvin Gregor Mrzyglod</title>
+    <title>Your Name - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <header class="intro">
-            <h1>Game Developer & Bible Nerd</h1>
-            <p>Marvin Gregor Mrzyglod is passionate about creating biblical content. He has developed blockbuster video games, pioneered practical use of <a href="https://selfdeterminationtheory.org/theory/">Self-Determination Theory</a> and peaked when Sony entrusted him with design leadership of their oldest exclusive PlayStation franchise. However, he quit gaming to develop new ways of interacting with the Bible and let people experience scripture in refreshing ways.
-<br><br>
-  He has worked with a range of different languages and tools. The things he currently has the most experience with are: <mark>LUA</mark>, <mark>JavaScript</mark>, <mark>HTML</mark>, <mark>CSS</mark>, <mark>git</mark>, <mark>Unreal Engine</mark>, <mark>Anvil/Scimitar</mark>, <mark>GameMaker</mark>, <mark>GML Script</mark> and <mark>Eschatology</mark>.
-        </header>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#intro">Intro</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#work-experience">Work</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#awards">Awards</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#about-me">About</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-        <section class="projects">
-            <h2>My Projects</h2>
-            <div class="project-grid">
-                <div class="project-item">
-                    <img src="project1.jpg" alt="Project 1">
-                    <div class="overlay">
-                        <div class="project-info">
-                            <h3>Project Title 1</h3>
-                            <p>Click to open website</p>
+        <main class="content">
+            <header class="intro" id="intro">
+                <h1>Hi, I'm [Your Name]</h1>
+                <p>I'm a <mark>[your profession]</mark> passionate about creating <mark>[what you do]</mark>. 
+                With [X years] of experience, I specialize in [your skills]. 
+                Check out my <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> or 
+                <a href="https://twitter.com/yourhandle">Twitter</a>. Welcome to my portfolio!</p>
+            </header>
+
+            <section class="projects" id="projects">
+                <h2>My Projects</h2>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <img src="project1.jpg" alt="Project 1">
+                        <div class="overlay">
+                            <div class="project-info">
+                                <h3>Project Title 1</h3>
+                                <p>Click to open website</p>
+                            </div>
+                        </div>
+                        <a href="https://project1.example.com" class="project-link"></a>
+                    </div>
+                    <div class="project-item">
+                        <img src="project2.jpg" alt="Project 2">
+                        <div class="overlay">
+                            <div class="project-info">
+                                <h3>Project Title 2</h3>
+                                <p>Click to open website</p>
+                            </div>
+                        </div>
+                        <a href="https://project2.example.com" class="project-link"></a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="work-experience" id="work-experience">
+                <h2>Work Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Job Title</h3>
+                        <p class="subtitle">Company Name | [Start Date] - [End Date]</p>
+                        <p>Description of responsibilities and achievements.</p>
+                        <div class="project-image">
+                            <a href="https://product-website.com" target="_blank">
+                                <img src="job-project1.jpg" alt="Project from Job">
+                            </a>
                         </div>
                     </div>
-                    <a href="https://project1.example.com" class="project-link"></a>
                 </div>
-                <div class="project-item">
-                    <img src="project2.jpg" alt="Project 2">
-                    <div class="overlay">
-                        <div class="project-info">
-                            <h3>Project Title 2</h3>
-                            <p>Click to open website</p>
-                        </div>
-                    </div>
-                    <a href="https://project2.example.com" class="project-link"></a>
-                </div>
-                <!-- Add more projects as needed -->
-            </div>
-        </section>
+            </section>
 
-        <section class="work-experience">
-            <h2>Work Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Job Title</h3>
-                    <p class="subtitle">Company Name | [Start Date] - [End Date]</p>
-                    <p>Description of responsibilities and achievements.</p>
-                    <div class="project-image">
-                        <a href="https://product-website.com" target="_blank">
-                            <img src="job-project1.jpg" alt="Project from Job">
-                        </a>
+            <section class="education" id="education">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Degree Title</h3>
+                        <p class="subtitle">University Name | [Graduation Year]</p>
+                        <p>Relevant coursework or achievements.</p>
                     </div>
                 </div>
-                <!-- Add more work experience items as needed -->
-            </div>
-        </section>
+            </section>
 
-        <section class="education">
-            <h2>Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Degree Title</h3>
-                    <p class="subtitle">University Name | [Graduation Year]</p>
-                    <p>Relevant coursework or achievements.</p>
+            <section class="awards" id="awards">
+                <h2>Awards & Recognitions</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Award Name</h3>
+                        <p class="subtitle">Issuing Organization | [Year]</p>
+                        <p>Brief description of the award or recognition.</p>
+                    </div>
                 </div>
-                <!-- Add more education items as needed -->
-            </div>
-        </section>
+            </section>
 
-        <section class="awards">
-            <h2>Awards & Recognitions</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Award Name</h3>
-                    <p class="subtitle">Issuing Organization | [Year]</p>
-                    <p>Brief description of the award or recognition.</p>
+            <section class="publications" id="publications">
+                <h2>Publications</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Publication Title</h3>
+                        <p class="subtitle">Journal/Publisher | [Publication Date]</p>
+                        <p>Brief description or citation.</p>
+                    </div>
                 </div>
-                <!-- Add more award items as needed -->
-            </div>
-        </section>
+            </section>
 
-        <section class="publications">
-            <h2>Publications</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Publication Title</h3>
-                    <p class="subtitle">Journal/Publisher | [Publication Date]</p>
-                    <p>Brief description or citation.</p>
-                </div>
-                <!-- Add more publication items as needed -->
-            </div>
-        </section>
-
-        <section class="about-me">
-            <h2>A Little More About Me</h2>
-            <p>I love spending my free time [hobby 1], [hobby 2], and exploring [hobby 3]. 
-            When I'm not working on [your profession-related activity], you can find me 
-            [fun personal detail].</p>
-        </section>
+            <section class="about-me" id="about-me">
+                <h2>A Little More About Me</h2>
+                <p>I love spending my free time [hobby 1], [hobby 2], and exploring [hobby 3]. 
+                When I'm not working on [your profession-related activity], you can find me 
+                [fun personal detail].</p>
+            </section>
+        </main>
     </div>
 </body>
 </html>
