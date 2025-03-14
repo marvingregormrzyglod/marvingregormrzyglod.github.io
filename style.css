@@ -166,17 +166,6 @@ body {
     box-shadow: 0 4px 20px rgba(47, 79, 79, 0.2);
 }
 
-/* Initial Cap */
-.initial-cap::first-letter {
-    font-family: 'Playfair Display', serif;
-    float: left;
-    font-size: 3.5em;
-    line-height: 0.8;
-    margin-right: 5px; /* Reduced gap */
-    color: #d4a017;
-    text-shadow: 1px 1px 2px rgba(47, 79, 79, 0.5);
-}
-
 .intro h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2.8em;
@@ -323,7 +312,7 @@ section:not(:last-child)::after {
 
 .project-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(47, 79, 79,  Asc);
+    box-shadow: 0 8px 20px rgba(47, 79, 79, 0.4);
 }
 
 .project-item:hover .overlay {
@@ -338,7 +327,7 @@ section:not(:last-child)::after {
 .work-experience, .education, .awards, .publications {
     margin-bottom: 80px;
     background: rgba(47, 79, 79, 0.3);
-    bordersborder: 1px solid #d4a017;
+    border: 1px solid #d4a017;
     padding: 30px;
     border-radius: 8px;
     backdrop-filter: blur(12px);
@@ -388,11 +377,21 @@ section:not(:last-child)::after {
     letter-spacing: 0.5px;
 }
 
-.item .subtitle {
+.highlight {
+    color: #d4a017;
+}
+
+.employer {
     color: #5f9ea0;
     font-size: 1em;
     margin-bottom: 5px;
     font-style: italic;
+}
+
+.date-range {
+    color: #5f9ea0;
+    font-size: 0.9em;
+    margin-top: 5px;
 }
 
 .item a {
@@ -406,8 +405,15 @@ section:not(:last-child)::after {
     color: #e6b800;
 }
 
-.item p {
+.description-list {
+    list-style-type: disc;
+    margin-left: 20px;
     color: #2f4f4f;
+    line-height: 1.8;
+}
+
+.description-list li {
+    margin-bottom: 5px;
 }
 
 /* Game Info (Work Experience Specific) */
@@ -418,8 +424,13 @@ section:not(:last-child)::after {
     margin-top: 20px;
 }
 
+.screenshots {
+    display: flex;
+    gap: 10px;
+}
+
 .game-screenshot img {
-    width: 150px;
+    width: 300px; /* Doubled from 150px */
     height: auto;
     border-radius: 6px;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -529,8 +540,12 @@ section:not(:last-child)::after {
         width: 100%;
     }
     
+    .screenshots {
+        flex-direction: column;
+    }
+    
     .game-screenshot img {
         width: 100%;
-        max-width: 200px;
+        max-width: 300px;
     }
 }
