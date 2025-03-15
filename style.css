@@ -377,10 +377,6 @@ section:not(:last-child)::after {
     letter-spacing: 0.5px;
 }
 
-.highlight {
-    color: #d4a017;
-}
-
 .employer {
     color: #5f9ea0;
     font-size: 1em;
@@ -429,9 +425,16 @@ section:not(:last-child)::after {
     gap: 10px;
 }
 
-.game-screenshot img {
-    width: 300px; /* Doubled from 150px */
-    height: auto;
+.game-screenshot.first-screenshot img {
+    width: auto;
+    height: 150px; /* 50% of previous typical height, scaled proportionally */
+    border-radius: 6px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.game-screenshot.second-screenshot img {
+    width: auto;
+    height: 150px; /* Matches first screenshot's height */
     border-radius: 6px;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -544,8 +547,15 @@ section:not(:last-child)::after {
         flex-direction: column;
     }
     
-    .game-screenshot img {
+    .game-screenshot.first-screenshot img {
         width: 100%;
         max-width: 300px;
+        height: auto; /* Maintain aspect ratio on mobile */
+    }
+    
+    .game-screenshot.second-screenshot img {
+        width: 100%;
+        max-width: 300px;
+        height: auto; /* Maintain aspect ratio on mobile */
     }
 }
