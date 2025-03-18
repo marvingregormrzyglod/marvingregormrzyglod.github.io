@@ -535,6 +535,84 @@
                             </div>
                         </div>
                     </div>
+                    <div class="item">
+                        <h3 style="text-align: center; margin-bottom: 10px;">Small Freelance Designs</h3>
+                        <p style="text-align: center; margin-bottom: 20px; color: #2f4f4f; font-size: 0.9em;">
+                            These small design jobs were taken on-and-off as ongoing conversations with clients, without big commitments, allowing flexibility alongside my primary roles.
+                        </p>
+                        <div class="game-info">
+                            <div class="screenshots">
+                                <a href="https://clienta.example.com" class="game-screenshot first-screenshot">
+                                    <img src="/media/freelance_clienta_1.jpg" alt="Client A Project Screenshot 1">
+                                    <div class="screenshot-overlay">
+                                        <h3>Project X</h3>
+                                        <p>Click to view on Client A</p>
+                                    </div>
+                                </a>
+                                <a href="https://clienta.example.com" class="game-screenshot second-screenshot">
+                                    <img src="/media/freelance_clienta_2.jpg" alt="Client A Project Screenshot 2">
+                                    <div class="screenshot-overlay">
+                                        <h3>Project X</h3>
+                                        <p>Click to view on Client A</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="game-details">
+                                <h3>Project X for Client A</h3>
+                                <p><strong>Date:</strong> January 2023</p>
+                                <p><strong>Description:</strong> Designed a custom game mechanic for a mobile app.</p>
+                                <p><strong>Tools:</strong> Unity, C#</p>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <div class="screenshots">
+                                <a href="https://clientb.example.com" class="game-screenshot first-screenshot">
+                                    <img src="/media/freelance_clientb_1.jpg" alt="Client B Project Screenshot 1">
+                                    <div class="screenshot-overlay">
+                                        <h3>Project Y</h3>
+                                        <p>Click to view on Client B</p>
+                                    </div>
+                                </a>
+                                <a href="https://clientb.example.com" class="game-screenshot second-screenshot">
+                                    <img src="/media/freelance_clientb_2.jpg" alt="Client B Project Screenshot 2">
+                                    <div class="screenshot-overlay">
+                                        <h3>Project Y</h3>
+                                        <p>Click to view on Client B</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="game-details">
+                                <h3>Project Y for Client B</h3>
+                                <p><strong>Date:</strong> March 2023</p>
+                                <p><strong>Description:</strong> Created UI mockups and level design for an indie game.</p>
+                                <p><strong>Tools:</strong> Photoshop, Unreal Engine</p>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <div class="screenshots">
+                                <a href="https://clientc.example.com" class="game-screenshot first-screenshot">
+                                    <img src="/media/freelance_clientc_1.jpg" alt="Client C Project Screenshot 1">
+                                    <div class="screenshot-overlay">
+                                        <h3>Project Z</h3>
+                                        <p>Click to view on Client C</p>
+                                    </div>
+                                </a>
+                                <a href="https://clientc.example.com" class="game-screenshot second-screenshot">
+                                    <img src="/media/freelance_clientc_2.jpg" alt="Client C Project Screenshot 2">
+                                    <div class="screenshot-overlay">
+                                        <h3>Project Z</h3>
+                                        <p>Click to view on Client C</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="game-details">
+                                <h3>Project Z for Client C</h3>
+                                <p><strong>Date:</strong> June 2023</p>
+                                <p><strong>Description:</strong> Developed a prototype for a puzzle game.</p>
+                                <p><strong>Tools:</strong> GameMaker, GML</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -711,8 +789,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             const links = document.querySelectorAll('a[href]');
             links.forEach(link => {
-                link.setAttribute('target', '_blank');
-                link.setAttribute('rel', 'noopener noreferrer');
+                const href = link.getAttribute('href');
+                // Only apply target="_blank" to external links (not # anchors)
+                if (href && !href.startsWith('#')) {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                }
             });
         });
     </script>
