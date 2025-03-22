@@ -430,16 +430,17 @@ section:not(:last-child)::after {
 .game-screenshot {
     position: relative;
     display: inline-block;
-    width: auto; /* Let width adjust to height proportionally */
-    height: 150px; /* Consistent height with other sections */
-    overflow: hidden; /* Prevent overflow during scaling */
+    width: auto;
+    height: 150px;
+    overflow: hidden; /* Clips the scaled image */
+    border-radius: 6px; /* Apply rounded corners to the container */
 }
 
 .game-screenshot img {
     width: auto;
-    height: 100%; /* Fill the container height */
-    border-radius: 6px;
+    height: 100%;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    /* Remove border-radius from the image */
 }
 
 .game-screenshot:hover img {
@@ -512,6 +513,18 @@ section:not(:last-child)::after {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 4px 20px rgba(47, 79, 79, 0.2);
+}
+
+.about-me-screenshot {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.about-me-screenshot .game-screenshot {
+    width: auto;
+    height: 150px;
+    /* Inherits other styles from .game-screenshot */
 }
 
 .about-me p {
