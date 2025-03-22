@@ -600,8 +600,14 @@ section:not(:last-child)::after {
         width: 100%;
     }
     
+    .game-info {
+        flex-direction: column; /* Stack details above screenshots */
+        align-items: flex-start; /* Align to the left for better readability */
+    }
+    
     .screenshots {
         flex-direction: column;
+        width: 100%; /* Ensure screenshots take full width */
     }
     
     .game-screenshot {
@@ -613,6 +619,11 @@ section:not(:last-child)::after {
     .game-screenshot img {
         width: 100%;
         height: auto;
+    }
+    
+    .game-details {
+        width: 100%; /* Ensure details take full width */
+        margin-bottom: 15px; /* Add spacing between details and screenshots */
     }
     
     .about-me .sumerian-image {
