@@ -324,8 +324,6 @@ section:not(:last-child)::after {
     text-decoration: none;
     font-size: 0.9em;
     transition: color 0.3s ease;
-    display: block;
-    margin-bottom: 5px;
 }
 
 .item a:hover {
