@@ -299,6 +299,13 @@ section:not(:last-child)::after {
     letter-spacing: 0.5px;
 }
 
+.job-title {
+    color: #5f9ea0;
+    font-size: 1em;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
 .employer {
     color: #5f9ea0;
     font-size: 1em;
@@ -317,6 +324,8 @@ section:not(:last-child)::after {
     text-decoration: none;
     font-size: 0.9em;
     transition: color 0.3s ease;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .item a:hover {
