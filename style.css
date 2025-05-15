@@ -302,6 +302,7 @@ section:not(:last-child)::after {
 .job-title {
     color: #5f9ea0;
     font-size: 1em;
+    margin-top: 5px;
     margin-bottom: 5px;
     font-style: italic;
 }
