@@ -560,10 +560,10 @@ section:not(:last-child)::after {
     .awards, 
     .publications,
     .about-me {
-        padding: 15px;
+        padding: 1px;
     }
     
     .intro {
-        padding: 15px;
+        padding: 1px;
     }
 }
