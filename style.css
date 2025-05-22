@@ -465,6 +465,14 @@ section:not(:last-child)::after {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    .background-image {
+        min-height: 200vh; /* Make background much taller on mobile */
+        background-attachment: scroll; /* Disable parallax on mobile for better performance */
+        background-position: center center; /* Center the background */
+        transform: none !important; /* Disable JavaScript parallax transforms on mobile */
+    }
+    
     .container {
         flex-direction: column;
     }
