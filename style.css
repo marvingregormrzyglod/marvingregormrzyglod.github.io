@@ -504,6 +504,7 @@ section:not(:last-child)::after {
     
     .content {
         padding-left: 0;
+        padding-right: 0;
     }
     
     .intro h1 {
@@ -552,7 +553,17 @@ section:not(:last-child)::after {
         margin-bottom: 15px; /* Add spacing between details and screenshots */
     }
     
-    .about-me .sumerian-image {
-        max-width: 100%;
+    /* Reduce section padding on mobile */
+    .projects,
+    .work-experience, 
+    .education, 
+    .awards, 
+    .publications,
+    .about-me {
+        padding: 15px;
+    }
+    
+    .intro {
+        padding: 15px;
     }
 }
