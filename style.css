@@ -461,6 +461,8 @@ section:not(:last-child)::after {
     display: block;
     margin: 0 auto;
     border-radius: 6px;
+    max-width: 100%;
+    height: auto;
 }
 
 /* Responsive Design */
@@ -573,5 +575,10 @@ section:not(:last-child)::after {
     
     .intro {
         padding: 1px;
+    }
+
+    .about-me .sumerian-image {
+        width: 100%;
+        height: auto;
     }
 }
