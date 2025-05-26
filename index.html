@@ -857,18 +857,21 @@
 
             // Sidebar Highlighting
             let current = '';
-            if (scrollTop === 0) {
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                // Check if the section is currently visible in viewport
+                if (scrollTop >= sectionTop - 100 && scrollTop < sectionTop + sectionHeight - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            // Handle edge cases
+            if (scrollTop < 50) {
                 current = 'intro';
-            } else if (scrollTop >= documentHeight - 10) {
+            } else if (scrollTop >= documentHeight - 50) {
                 current = 'about-me';
-            } else {
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionBottom = sectionTop + section.offsetHeight;
-                    if (viewportCenter >= sectionTop && viewportCenter <= sectionBottom) {
-                        current = section.getAttribute('id');
-                    }
-                });
             }
 
             navLinks.forEach(link => {
