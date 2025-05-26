@@ -857,32 +857,20 @@
 
             // Sidebar Highlighting
             let current = '';
-            let closestSection = null;
-            let minDistance = Infinity;
-            
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                const sectionCenter = sectionTop + (section.offsetHeight / 2);
+                const sectionHeight = section.offsetHeight;
                 
-                // Distance from viewport center to section center
-                const distance = Math.abs(viewportCenter - sectionCenter);
-                
-                // Find the section closest to viewport center
-                if (distance < minDistance) {
-                    minDistance = distance;
-                    closestSection = section;
+                // Check if the section is currently visible in viewport
+                if (scrollTop >= sectionTop - 100 && scrollTop < sectionTop + sectionHeight - 100) {
+                    current = section.getAttribute('id');
                 }
             });
             
-            if (closestSection) {
-                current = closestSection.getAttribute('id');
-            }
-            
-            // Override for very top and bottom
-            if (scrollTop < 100) {
+            // Handle edge cases
+            if (scrollTop < 50) {
                 current = 'intro';
-            } else if (scrollTop >= documentHeight - 100) {
+            } else if (scrollTop >= documentHeight - 50) {
                 current = 'about-me';
             }
 
