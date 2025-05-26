@@ -71,9 +71,9 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
-                    
+                    </div>  
                 </div>
+            </section>
 
             <section class="work-experience" id="work-experience">
                 <h2>Game Development Experience</h2>
@@ -857,20 +857,32 @@
 
             // Sidebar Highlighting
             let current = '';
+            let closestSection = null;
+            let minDistance = Infinity;
+            
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                const sectionCenter = sectionTop + (section.offsetHeight / 2);
                 
-                // Check if the section is currently visible in viewport
-                if (scrollTop >= sectionTop - 100 && scrollTop < sectionTop + sectionHeight - 100) {
-                    current = section.getAttribute('id');
+                // Distance from viewport center to section center
+                const distance = Math.abs(viewportCenter - sectionCenter);
+                
+                // Find the section closest to viewport center
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestSection = section;
                 }
             });
             
-            // Handle edge cases
-            if (scrollTop < 50) {
+            if (closestSection) {
+                current = closestSection.getAttribute('id');
+            }
+            
+            // Override for very top and bottom
+            if (scrollTop < 100) {
                 current = 'intro';
-            } else if (scrollTop >= documentHeight - 50) {
+            } else if (scrollTop >= documentHeight - 100) {
                 current = 'about-me';
             }
 
