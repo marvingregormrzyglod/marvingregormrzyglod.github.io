@@ -444,7 +444,7 @@ section:not(:last-child)::after {
 }
 
 .nda-image {
-    filter: blur(2px) contrast(0.8) brightness(0.8) saturate(0.5);
+    filter: blur(8px) contrast(0.8) brightness(0.8) saturate(1);
     transition: filter 0.3s ease;
 }
 
