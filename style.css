@@ -11,7 +11,8 @@ body {
     line-height: 1.6;
     position: relative;
     overflow-x: hidden;
-    background: #ccc; /* Fallback grey if image fails */
+    /*background: #ccc; /* Fallback grey if image fails */
+    background: #1a3d2e;
 }
 
 /* Background Wrapper */
@@ -27,8 +28,10 @@ body {
 
 .background-image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    /*height: auto;
     min-height: 100vh; /* Ensure it spans at least viewport height */
+    min-height: 200vh;
     background: linear-gradient(to bottom, #1a3d2e, #0f2419);
     /*background: url('/media/bg.jpg') no-repeat center top;
     background-size: cover;*/
