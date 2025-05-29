@@ -29,8 +29,9 @@ body {
     width: 100%;
     height: auto;
     min-height: 100vh; /* Ensure it spans at least viewport height */
-    background: url('/media/bg.jpg') no-repeat center top;
-    background-size: cover;
+    background: linear-gradient(to bottom, #1a3d2e, #0f2419);
+    /*background: url('/media/bg.jpg') no-repeat center top;
+    background-size: cover;*/
     position: absolute;
     top: 0;
     left: 0;
