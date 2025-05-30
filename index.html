@@ -1,4 +1,43 @@
-<!DOCTYPE html>
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,6 +62,7 @@
                 <li><a href="#tech-used">Tech Used</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#chronological-experience">Chronological Experience</a></li>
+                <li><a href="#about-me">About Me</a></li>
             </ul>
         </nav>
         <div class="content">
@@ -52,25 +92,33 @@
             <section id="games" class="category-section">
                 <h2>Games</h2>
                 <h3>Announced/Released Games</h3>
-                <ul>
-                    <li><strong>Max Payne 1+2 Remake</strong> - Design Consultant <a href="https://www.remedygames.com">Link</a></li>
-                    <li><strong>Destruction AllStars</strong> - Lead Designer <a href="https://www.playstation.com/en-us/games/destruction-allstars/">Link</a></li>
-                    <li><strong>Skull & Bones</strong> - Game Designer <a href="https://store.steampowered.com/app/10300/Skull_and_Bones/">Link</a></li>
-                    <li><strong>Assassin's Creed Mirage</strong> - Game Designer <a href="https://www.ubisoft.com/en-us/game/assassins-creed/mirage">Link</a></li>
-                    <li><strong>Assassin's Creed Valhalla: Dawn of Ragnarok</strong> - Game Designer <a href="https://store.steampowered.com/app/1687970/Assassins_Creed_Valhalla__Dawn_of_Ragnarok/">Link</a></li>
-                    <li><strong>Assassin's Creed Valhalla: Wrath of the Druids</strong> - Game Designer <a href="https://store.steampowered.com/app/1602000/Assassins_Creed_Valhalla__Wrath_of_the_Druids/">Link</a></li>
-                    <li><strong>Assassin's Creed Valhalla</strong> - Game Designer <a href="https://store.steampowered.com/app/2208920/Assassins_Creed_Valhalla/">Link</a></li>
-                    <li><strong>Lord of the Rings Online</strong> - Game Master <a href="https://www.lotro.com/">Link</a></li>
-                    <li><strong>Westworld Mobile</strong> - Localization (German) <a href="https://www.warnerbros.com/games/westworld">Link</a></li>
-                    <li><strong>Final Fantasy XIV: Stormblood</strong> - Senior Technical Specialist <a href="https://na.finalfantasyxiv.com/stormblood/">Link</a></li>
-                    <li><strong>Final Fantasy XIV: Heavensward</strong> - Senior Technical Specialist <a href="https://na.finalfantasyxiv.com/heavensward/">Link</a></li>
-                    <li><strong>Final Fantasy XIV: A Realm Reborn</strong> - Senior Technical Specialist <a href="https://na.finalfantasyxiv.com/a_realm_reborn/">Link</a></li>
-                    <li><strong>Final Fantasy XI: Online</strong> - Senior Technical Specialist <a href="https://www.finalfantasyxi.com/">Link</a></li>
-                    <li><strong>Mononeko: A Rhythm Adventure</strong> - Programmer, Designer <a href="https://store.steampowered.com/app/mononeko">Link</a></li>
-                    <li><strong>Legends of the Past</strong> - Freelance Designer <a href="https://www.legendsofthepast.gg/">Link</a></li>
-                </ul>
+                <div class="game-list">
+                    <div class="game-item">
+                        <h4>Max Payne 1+2 Remake</h4>
+                        <p>Release Date: N/A</p>
+                        <p>Platforms: PC, PlayStation 5, Xbox Series X|S</p>
+                        <div class="screenshots">
+                            <img src="media/maxpayne1.jpg" alt="Max Payne 1+2 Remake Screenshot 1">
+                            <img src="media/maxpayne2.jpg" alt="Max Payne 1+2 Remake Screenshot 2">
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <h4>Destruction AllStars</h4>
+                        <p>Release Date: February 2, 2021</p>
+                        <p>Platforms: PlayStation 5</p>
+                        <div class="screenshots">
+                            <img src="media/destructionallstars1.jpg" alt="Destruction AllStars Screenshot 1">
+                            <img src="media/destructionallstars2.jpg" alt="Destruction AllStars Screenshot 2">
+                        </div>
+                    </div>
+                </div>
                 <h3>Secret Games</h3>
-                <p>4 Unannounced Games (under NDA) for Sony & LEGO</p>
+                <ul>
+                    <li>Unannounced Multiplayer Game (Sony)</li>
+                    <li>Unannounced Linear Action-Adventure (Ubisoft)</li>
+                    <li>Unannounced Game (LEGO)</li>
+                    <li>Unannounced Game (Sony)</li>
+                </ul>
             </section>
 
             <section id="creative-direction" class="category-section">
@@ -157,6 +205,14 @@
                     <li>2018: Localization (German) at Behavior Interactive</li>
                     <li>2015-2018: Senior Technical Specialist at Square Enix Europe</li>
                 </ul>
+            </section>
+
+            <section id="about-me" class="category-section about-me">
+                <h2>About Me</h2>
+                <p>My name rendered in ancient Sumerian script, the world’s oldest known writing system. The angular marks remind of morse code and invite to be touched like braille. Ancient languages are a great passion of mine.</p>
+                <img src="media/sumerian.jpg" alt="Sumerian Script" class="sumerian-image">
+                <p>I am part of the Every Nation church, where I volunteer in the admin team, the prayer ministry, the kids church and lead a bible study group.</p>
+                <p><a href politik="mailto:marvin.mrzyglod@example.com">marvin.mrzyglod@example.com</a></p>
             </section>
         </div>
     </div>
