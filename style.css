@@ -247,7 +247,7 @@ section:not(:last-child)::after {
 }
 
 /* Items (General Styling for Cards) */
-.category-section, .education, .awards, .publications {
+.work-experience, .education, .awards, .publications {
     margin-bottom: 80px;
     background: rgba(47, 79, 79, 0.3);
     border: 1px solid #d4a017;
@@ -256,13 +256,6 @@ section:not(:last-child)::after {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 4px 20px rgba(47, 79, 79, 0.2);
-}
-
-.category-section ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style-position: inside; /* Optional, for bullet alignment */
 }
 
 .items {
@@ -607,7 +600,7 @@ section:not(:last-child)::after {
     
     /* Reduce section padding on mobile */
     .projects,
-    .category-section,
+    .work-experience, 
     .education, 
     .awards, 
     .publications,
