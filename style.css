@@ -258,6 +258,13 @@ section:not(:last-child)::after {
     box-shadow: 0 4px 20px rgba(47, 79, 79, 0.2);
 }
 
+.category-section ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-position: inside; /* Optional, for bullet alignment */
+}
+
 .items {
     max-width: 800px;
     margin: 0 auto;
