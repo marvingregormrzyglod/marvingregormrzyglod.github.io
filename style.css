@@ -66,92 +66,18 @@ body {
 
 /* Container */
 .container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
-    display: flex;
-    perspective: 1000px;
+    display: block; 
     position: relative;
-    z-index: 1; /* Above background */
-}
-
-/* Sidebar (Timeline) */
-.sidebar {
-    width: 200px;
-    position: sticky;
-    top: 40px;
-    height: calc(100vh - 80px);
-    padding: 20px;
-    background: linear-gradient(to bottom, #2f4f4f, #1a2f2f);
-    border-right: 2px solid #d4a017;
-    box-shadow: 0 4px 15px rgba(47, 79, 79, 0.5);
-    border-radius: 8px 0 0 8px;
-}
-
-.sidebar nav {
-    position: relative;
-}
-
-.sidebar nav ul {
-    list-style: none;
-}
-
-.sidebar nav::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 10px;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom, #d4a017, #e6b800);
-}
-
-.sidebar nav ul li {
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.sidebar nav ul li a {
-    color: #f5f5f5;
-    text-decoration: none;
-    font-size: 1em;
-    padding-left: 25px;
-    display: block;
-    transition: color 0.3s ease, transform 0.2s ease-in-out;
-    text-shadow: 0 1px 2px rgba(47, 79, 79, 0.5);
-}
-
-.sidebar nav ul li a:hover,
-.sidebar nav ul li a.active {
-    color: #e6b800;
-    transform: scale(1.03);
-}
-
-.timeline-dot::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 6px;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-    background: #d4a017;
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(212, 160, 23, 0.7);
-    transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
-}
-
-.sidebar nav ul li a.active::before {
-    width: 14px;
-    height: 14px;
-    background: #e6b800;
-    box-shadow: 0 0 8px rgba(230, 184, 0, 0.9);
+    z-index: 1;
 }
 
 /* Main Content */
 .content {
-    flex: 1;
-    padding-left: 40px;
+    width: 100%;
+    padding: 0;
 }
 
 /* Introduction */
@@ -512,39 +438,6 @@ section:not(:last-child)::after {
     
     .container {
         flex-direction: column;
-    }
-    
-    .sidebar {
-        width: 100%;
-        position: relative;
-        top: 0;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid #d4a017;
-        padding: 20px 0;
-        border-radius: 8px 8px 0 0;
-    }
-    
-    .sidebar nav::before {
-        display: none;
-    }
-    
-    .sidebar nav ul {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .sidebar nav ul li {
-        margin: 0 10px 10px;
-    }
-    
-    .sidebar nav ul li a {
-        padding-left: 0;
-    }
-    
-    .timeline-dot::before {
-        display: none;
     }
     
     .content {
