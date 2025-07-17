@@ -121,10 +121,10 @@ body {
 }
 
 .intro mark {
-    background-color: #d4a017;
+    background-color: #ffdf5e;
     padding: 2px 8px;
     border-radius: 4px;
-    color: #2f4f4f;
+    color: #1a1a1a;
 }
 
 /* Section Headings */
@@ -248,14 +248,14 @@ section:not(:last-child)::after {
 }
 
 .item a {
-    color: #d4a017;
+    color: #ffdf5e;
     text-decoration: none;
     font-size: 0.9em;
     transition: color 0.3s ease;
 }
 
 .item a:hover {
-    color: #e6b800;
+    color: #ffe98c;
 }
 
 .description-list {
