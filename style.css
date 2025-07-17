@@ -197,7 +197,7 @@ section:not(:last-child)::after {
 
 .item {
     background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
+    padding: 40px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(47, 79, 79, 0.2);
@@ -216,7 +216,7 @@ section:not(:last-child)::after {
 }
 
 .text-left {
-    width: 35%;
+    width: 25%;
     flex-shrink: 0;
 }
 
