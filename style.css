@@ -221,6 +221,8 @@ section:not(:last-child)::after {
 
 .text-right {
     flex: 1;
+    in-width: 0;
+    word-break: break-word;
 }
 
 .item h3 {
@@ -268,6 +270,7 @@ section:not(:last-child)::after {
     margin-left: 20px;
     color: #2f4f4f;
     line-height: 1.8;
+    word-break: break-word;
 }
 
 .description-list li {
