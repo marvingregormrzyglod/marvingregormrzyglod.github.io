@@ -66,9 +66,9 @@ body {
 
 /* Container */
 .container {
-    max-width: 1640px;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px 40px;
     display: block; 
     position: relative;
     z-index: 1;
