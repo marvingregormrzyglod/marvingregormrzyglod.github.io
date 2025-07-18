@@ -68,7 +68,7 @@ body {
 .container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 120px 50px;
+    padding: 50px 50px;
     display: block; 
     position: relative;
     z-index: 1;
@@ -216,7 +216,7 @@ section:not(:last-child)::after {
 }
 
 .text-left {
-    width: 25%;
+    width: 30%;
     flex-shrink: 0;
 }
 
