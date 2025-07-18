@@ -256,7 +256,7 @@ section:not(:last-child)::after {
 }
 
 .item a {
-    color: #b3461c;
+    color: #0f0e54;
     text-decoration: none;
     font-size: 1em;
     transition: color 0.3s ease;
