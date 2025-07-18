@@ -260,7 +260,7 @@ section:not(:last-child)::after {
     text-decoration: none;
     font-size: 1.05em;
     font-family: 'Lora', serif;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.35px;
     transition: color 0.3s ease;
 }
 
