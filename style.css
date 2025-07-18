@@ -216,7 +216,7 @@ section:not(:last-child)::after {
 }
 
 .text-left {
-    width: 27%;
+    width: 30%;
     flex-shrink: 0;
 }
 
