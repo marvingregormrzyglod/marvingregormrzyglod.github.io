@@ -259,8 +259,9 @@ section:not(:last-child)::after {
     color: #2f4f4f;
     text-decoration: none;
     font-size: 1.05em;
-    font-family: 'Lora', serif;
-    letter-spacing: 0.35px;
+    font-family: 'Noto Serif', serif;
+    font-weight: 400;
+    letter-spacing: 0.3px;
     transition: color 0.3s ease;
 }
 
