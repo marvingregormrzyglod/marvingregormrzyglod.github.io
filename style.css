@@ -66,7 +66,7 @@ body {
 
 /* Container */
 .container {
-    max-width: 1440px;
+    max-width: 1540px;
     margin: 0 auto;
     padding: 120px 120px;
     display: block; 
@@ -191,7 +191,7 @@ section:not(:last-child)::after {
 }
 
 .items {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
