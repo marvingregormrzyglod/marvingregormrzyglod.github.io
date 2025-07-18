@@ -398,7 +398,7 @@ section:not(:last-child)::after {
 
 .game-details p {
     color: #2f4f4f;
-    font-size: 0.9em;
+    font-size: 1em;
     margin: 2px 0;
 }
 
