@@ -259,8 +259,7 @@ section:not(:last-child)::after {
     color: #2f4f4f;
     text-decoration: none;
     font-size: 1.05em;
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 0.2px;
+    font-family: 'Inter', sans-serif;
     transition: color 0.3s ease;
 }
 
