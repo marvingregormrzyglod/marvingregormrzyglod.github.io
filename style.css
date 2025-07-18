@@ -68,7 +68,7 @@ body {
 .container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 120px 220px;
+    padding: 120px 50px;
     display: block; 
     position: relative;
     z-index: 1;
