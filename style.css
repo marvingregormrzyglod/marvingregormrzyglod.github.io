@@ -259,7 +259,7 @@ section:not(:last-child)::after {
     color: #2f4f4f;
     text-decoration: none;
     font-size: 1em;
-    font-family: 'Noto Serif', serif;
+    font-family: 'Roboto Serif', serif;
     font-weight: 400;
     letter-spacing: 0.3px;
     transition: color 0.3s ease;
